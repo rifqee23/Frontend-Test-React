@@ -1,11 +1,19 @@
-import './App.css';
+import './index.css';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './components/templates/Layout';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ProductPage from './pages/ProductPage';
 
 const App = () => {
   return (
-    <div className="content">
-      <h1>Rsbuild with React</h1>
-      <p>Start building amazing things with Rsbuild.</p>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/products" element={<ProductPage />} />
+      </Route>
+    </Routes>
   );
 };
 
