@@ -12,33 +12,40 @@ export default function Card({
   alt: string;
   category: string;
   title: string;
-  price: string;
+  price: number;
   onClick?: () => void;
 }) {
   return (
-    <>
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <ImageLink
-          src={src}
-          alt={alt}
-          className={'object-cover object-center w-full '}
-          onClick={onClick}
-        />
-        <div className="mt-4">
-          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-            {category}
-          </h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">
-            {title}
-          </h2>
-          <p className="mt-1">
+    <div className="lg:w-1/4 md:w-1/2 w-full p-4">
+      <div className="h-full bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow flex flex-col">
+        {/* Gambar */}
+        <div className="h-64 w-full overflow-hidden">
+          <ImageLink
+            src={src}
+            alt={alt}
+            className="object-cover object-center w-full h-full"
+            onClick={onClick}
+          />
+        </div>
+
+        {/* Konten */}
+        <div className="p-4 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 className="text-brand-yellow text-xs font-semibold tracking-wide uppercase mb-1">
+              {category}
+            </h3>
+            <h2 className="text-brand-gray text-lg font-semibold mb-2">
+              {title}
+            </h2>
+          </div>
+          <p className="text-brand-yellow font-bold text-base mt-2">
             {Intl.NumberFormat('en-US', {
               style: 'currency',
               currency: 'USD',
-            }).format(parseInt(price))}
+            }).format(price)}
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -55,13 +55,13 @@ export default function Pagination({
   const displayedPages = getDisplayedPages();
 
   return (
-    <nav className="flex items-center gap-x-4 mt-8 justify-center">
+    <nav className="flex items-center gap-2 mt-8 justify-center">
       <button
         disabled={currentPage === 1}
         onClick={() => goToPage(currentPage - 1)}
-        className="text-gray-500 hover:text-gray-900 p-2 inline-flex items-center cursor-pointer"
+        className="text-gray-500 disabled:text-gray-300 hover:text-indigo-600 transition"
       >
-        <span className="w-10 h-10 rounded-full flex justify-center items-center hover:bg-indigo-50">
+        <span className="w-9 h-9 rounded-full flex justify-center items-center hover:bg-indigo-100">
           <svg
             width="7"
             height="12"
@@ -71,7 +71,7 @@ export default function Pagination({
           >
             <path
               d="M5.5 1L1.91421 4.58578C1.24755 5.25245 0.914213 5.58579 0.914213 6C0.914213 6.41421 1.24755 6.74755 1.91421 7.41421L5.5 11"
-              stroke="#4F46E5"
+              stroke="currentColor"
               strokeWidth="1.8"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -85,10 +85,10 @@ export default function Pagination({
           <button
             key={index}
             onClick={() => goToPage(page)}
-            className={`w-10 h-10 p-2 inline-flex items-center justify-center rounded-full transition-all duration-150 cursor-pointer ${
+            className={`w-9 h-9 flex items-center justify-center rounded-full text-sm font-medium transition ${
               currentPage === page
                 ? 'bg-indigo-600 text-white'
-                : 'text-gray-500 bg-gray-100 hover:bg-indigo-50 hover:text-gray-900'
+                : 'text-gray-600 hover:bg-indigo-100'
             }`}
           >
             {page}
@@ -96,7 +96,7 @@ export default function Pagination({
         ) : (
           <span
             key={index}
-            className="w-10 h-10 flex items-center justify-center text-gray-400"
+            className="w-9 h-9 flex items-center justify-center text-gray-400"
           >
             ...
           </span>
@@ -106,9 +106,9 @@ export default function Pagination({
       <button
         disabled={currentPage === totalPages}
         onClick={() => goToPage(currentPage + 1)}
-        className="text-gray-500 hover:text-gray-900 p-2 inline-flex items-center cursor-pointer"
+        className="text-gray-500 disabled:text-gray-300 hover:text-indigo-600 transition"
       >
-        <span className="w-10 h-10 rounded-full flex justify-center items-center hover:bg-indigo-50">
+        <span className="w-9 h-9 rounded-full flex justify-center items-center hover:bg-indigo-100">
           <svg
             width="7"
             height="12"
@@ -118,7 +118,7 @@ export default function Pagination({
           >
             <path
               d="M1.5 11L5.08578 7.41421C5.75245 6.74755 6.08579 6.41421 6.08579 6C6.08579 5.58579 5.75245 5.25245 5.08579 4.58579L1.5 1"
-              stroke="#4F46E5"
+              stroke="currentColor"
               strokeWidth="1.8"
               strokeLinecap="round"
               strokeLinejoin="round"
