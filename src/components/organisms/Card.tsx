@@ -31,7 +31,12 @@ export default function Card({
           <h2 className="text-gray-900 title-font text-lg font-medium">
             {title}
           </h2>
-          <p className="mt-1">{price}</p>
+          <p className="mt-1">
+            {Intl.NumberFormat('en-US', {
+              style: 'currency',
+              currency: 'USD',
+            }).format(parseInt(price))}
+          </p>
         </div>
       </div>
     </>
