@@ -18,8 +18,7 @@ export default function Card({
   return (
     <div className="lg:w-1/4 md:w-1/2 w-full p-4">
       <div className="h-full bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow flex flex-col">
-        {/* Gambar */}
-        <div className="h-64 w-full overflow-hidden">
+        <div className="w-full aspect-[4/3] overflow-hidden">
           <ImageLink
             src={src}
             alt={alt}
@@ -28,7 +27,6 @@ export default function Card({
           />
         </div>
 
-        {/* Konten */}
         <div className="p-4 flex-1 flex flex-col justify-between">
           <div>
             <h3 className="text-brand-yellow text-xs font-semibold tracking-wide uppercase mb-1">
