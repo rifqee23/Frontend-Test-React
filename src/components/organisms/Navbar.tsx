@@ -22,7 +22,7 @@ export default function Navbar() {
             className="flex title-font font-medium items-center text-brand-gray"
           >
             <FaShop size={30} />
-            <span className="ml-3 text-xl">Tailblocks</span>
+            <span className="ml-3 text-xl">FrontendTest</span>
           </Link>
 
           <button
